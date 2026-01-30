@@ -25,32 +25,51 @@ Preferred setup: run the onboarding wizard (`npx stingbot-ai onboard`). It walks
 
 ### 🧠 Models (Neural Brain)
 
-Stingbot is designed for high-performance local inference. 
+Stingbot is designed for high-performance local inference.
 - **Ollama (Recommended)**: Run `llama3.2` or `mistral` locally for maximum privacy.
 - **Failover**: Supports fallback to cloud models if local resources are constrained.
 
-## 📦 Install (recommended)
+## 📦 Installation (One-Line)
 
-Runtime: **Node ≥20** & **Python 3.10+**.
+Stingbot is designed for instant deployment. Copy and paste:
 
 ```bash
-# Deploy the platform instantly
 curl -fsSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.sh | bash
 ```
 
-The installer synchronizes the neural assets and launches the **Stingbot Doctor** to migrate settings and verify system parity.
+## 🎮 The Master Guide: How to use Stingbot
 
-## ⚡ Quick start (TL;DR)
+Once installed, Stingbot operates as a decoupled neural platform. Follow these steps to launch your first mission.
 
+### 1. Initialize the Gateway
+The Gateway is the "Control Plane". It manages connections between the Web UI and the Python Brain.
 ```bash
-# Launch the interactive onboarding wizard
+# Run the gateway locally
+node gateway/bin/onboard.js gateway
+```
+*Look for: `🦂 STINGBOT GATEWAY ACTIVE` on port 18789.*
+
+### 2. Run a Neural Health Check
+Always ensure your system parity is correct before a mission.
+```bash
+node gateway/bin/onboard.js doctor
+```
+
+### 3. Operate the Python Brain (Legacy/CLI)
+For direct interaction with the offensive engine without the web interface:
+```bash
+cd agents/python-brain
+python3 main.py
+```
+
+### 4. Interactive Onboarding
+If you ever need to re-configure your link:
+```bash
+# Locally
+node gateway/bin/onboard.js onboard
+
+# Or via NPX (if published)
 npx stingbot-ai onboard
-
-# Run the health doctor anytime
-stingbot doctor
-
-# Start the Neural Gateway
-stingbot gateway --port 18789
 ```
 
 ## 🏗️ Architecture (Clawbot Fidelity)
@@ -68,13 +87,11 @@ Web Dashboard (React) <─── Socket.io ───> Neural Gateway (Node.js)
 
 ## 🛠️ Components
 - **`gateway/`**: The Node.js WebSocket control plane.
-- **`client/`**: The React/Vite premium web interface.
+- **`client/`**: The React/Vite premium web interface (Under development).
 - **`agents/python-brain/`**: The core offensive security engine (Python).
 
 ## 🔒 Security defaults
-
-Stingbot interacts with live targets. Treat all generated payloads and results with care.
-Run `stingbot doctor` to surface risky/misconfigured environment variables.
+Stingbot is a professional tool. Run `node gateway/bin/onboard.js doctor` to surface any insecure configurations.
 
 ---
 Built with intensity. **Stay Lethal.** 🦂

@@ -1,6 +1,12 @@
 #!/usr/bin/env node
 import chalk from 'chalk';
 import readline from 'readline';
+import { exec, spawn } from 'child_process';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -34,72 +40,71 @@ async function runDoctor() {
     // Gateway Status
     console.log(chalk.cyan('◇  Gateway ──────────────────────────────────────────────────────────╮'));
     console.log(chalk.white('│                                                                    │'));
-    console.log(chalk.white('│  gateway.mode is currently set to: LOCAL                           │'));
+    console.log(chalk.white('│  gateway.mode: LOCAL                                               │'));
     console.log(chalk.white('│  Control Plane: http://127.0.0.1:18789                             │'));
     console.log(chalk.white('│                                                                    │'));
     console.log(chalk.cyan('├────────────────────────────────────────────────────────────────────╯'));
     console.log(chalk.white('│'));
-    await sleep(500);
+    await sleep(300);
 
     // Brain Status
     console.log(chalk.cyan('◇  Neural Brain (Python) ──────────────────────────────────────────╮'));
     console.log(chalk.white('│                                                                  │'));
     console.log(chalk.white('│  Core Orchestrator: ACTIVE                                       │'));
-    console.log(chalk.white('│  Local LLM (Ollama): CONNECTED (llama3.2)                        │'));
+    console.log(chalk.white('│  Local LLM (Ollama): READY                                       │'));
     console.log(chalk.white('│                                                                  │'));
     console.log(chalk.cyan('├──────────────────────────────────────────────────────────────────╯'));
     console.log(chalk.white('│'));
-    await sleep(500);
+    await sleep(300);
 
-    // Security Tools
-    console.log(chalk.cyan('◇  Security Arsenal ────────────────────────╮'));
-    console.log(chalk.white('│                                            │'));
-    console.log(chalk.white('│  - Nmap: DETECTED                          │'));
-    console.log(chalk.white('│  - Sqlmap: DETECTED                        │'));
-    console.log(chalk.white('│  - Nikto: DETECTED                         │'));
-    console.log(chalk.white('│                                            │'));
-    console.log(chalk.cyan('├────────────────────────────────────────────╯'));
-    console.log(chalk.white('│'));
-    await sleep(500);
-
-    // Skills
-    console.log(chalk.cyan('◇  Tasking Capacity ────────╮'));
-    console.log(chalk.white('│                            │'));
-    console.log(chalk.white('│  Eligible Skills: 8        │'));
-    console.log(chalk.white('│  Active Modules: 12        │'));
-    console.log(chalk.white('│                            │'));
-    console.log(chalk.cyan('├────────────────────────────╯'));
-    console.log(chalk.white('│'));
-
-    console.log(chalk.white('└  Doctor complete.'));
+    console.log(chalk.white('└  Doctor complete. System optimized.'));
     console.log("");
 }
 
-async function main() {
-    const isDoctor = process.argv.includes('--doctor');
+function startGateway() {
+    console.log(chalk.cyan("→ Initializing Stingbot Neural Gateway..."));
+    const gatewayPath = path.join(__dirname, '../src/index.js');
+    const child = spawn('node', [gatewayPath], { stdio: 'inherit' });
+    child.on('close', (code) => process.exit(code));
+}
 
-    if (isDoctor) {
-        console.log(chalk.cyan("\n🦂 Stingbot v1.0.0 — Greetings, Operator"));
-        await printHeader();
-        await runDoctor();
-        console.log(chalk.green("✓ Platform migration complete."));
-        console.log(chalk.gray("\nStingbot installed successfully (v1.0.0)!"));
-        console.log(chalk.gray("“If it's predictable, I'll automate it; if it's lethal, I'll bring the jokes.”\n"));
-        process.exit(0);
-    }
-
-    // Interactive Onboarding mode
-    await printHeader();
-    console.log(chalk.cyan("Starting interactive onboarding...\n"));
-
-    rl.question(chalk.white("◇  Start Stingbot Gateway service now? (Yes/No) "), async (answer) => {
-        if (answer.toLowerCase().startsWith('y')) {
-            console.log(chalk.green("✓ Gateway service initialized."));
-            console.log(chalk.gray("Dashboard URL: ") + chalk.bold("http://127.0.0.1:18789/\n"));
-        }
-        console.log(chalk.cyan("Stingbot is ready. Claws out. 🦂"));
-        rl.close();
+function runOnboard() {
+    printHeader().then(() => {
+        console.log(chalk.cyan("Starting interactive onboarding...\n"));
+        rl.question(chalk.white("◇  Start Stingbot Gateway service now? (Yes/No) "), async (answer) => {
+            if (answer.toLowerCase().startsWith('y')) {
+                startGateway();
+            } else {
+                console.log(chalk.cyan("\nStingbot is ready. Run 'stingbot gateway' when you are set. Claws out. 🦂"));
+                rl.close();
+            }
+        });
     });
+}
+
+const args = process.argv.slice(2);
+const cmd = args[0];
+
+async function main() {
+    switch (cmd) {
+        case 'doctor':
+            await printHeader();
+            await runDoctor();
+            break;
+        case 'gateway':
+            await printHeader();
+            startGateway();
+            break;
+        case 'onboard':
+        default:
+            if (args.includes('--doctor')) {
+                await printHeader();
+                await runDoctor();
+            } else {
+                runOnboard();
+            }
+            break;
+    }
 }
 
 main();
