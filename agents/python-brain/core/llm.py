@@ -11,12 +11,27 @@ class LLMAdapter:
         self.model = config.LLM_MODEL
         self.base_url = "http://localhost:11434"
 
-    def query(self, prompt, system_prompt="You are STINGBOT v2 [GENERALIST NEURAL ENGINE]. You handle cybersecurity tasks and daily productivity with lethal efficiency. Be precise, fast, and helpful."):
-        """Query the configured LLM provider."""
-        if self.provider == "mock": return self._query_mock(prompt)
-        if self.provider == "ollama": return self._query_ollama(prompt, system_prompt)
-        if self.provider == "gemini": return self._query_gemini(prompt, system_prompt)
-        return "Error: Unsupported provider configured."
+    def query(self, prompt, system_prompt="You are STINGBOT v2 [GENERALIST NEURAL ENGINE]. You handle cybersecurity tasks and daily productivity with lethal efficiency. Be precise, fast, and helpful.", max_retries=3):
+        """Query the configured LLM provider with automatic retry and fallback."""
+        for attempt in range(max_retries):
+            try:
+                if self.provider == "ollama": 
+                    return self._query_ollama(prompt, system_prompt)
+                elif self.provider == "openai": 
+                    return self._query_openai(prompt, system_prompt)
+                elif self.provider == "gemini": 
+                    return self._query_gemini(prompt, system_prompt)
+                elif self.provider == "anthropic": 
+                    return self._query_anthropic(prompt, system_prompt)
+                else: 
+                    return self._query_mock(prompt)
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    time.sleep(2 ** attempt)  # Exponential backoff
+                    continue
+                else:
+                    # Final fallback: return a safe error message
+                    return f"[NEURAL ENGINE ERROR] Unable to process request after {max_retries} attempts. Error: {str(e)[:100]}"
 
     def _query_mock(self, prompt):
         """Offline mock responses for testing."""
@@ -34,7 +49,7 @@ class LLMAdapter:
             "stream": False
         }
         try:
-            res = requests.post(url, json=payload, timeout=60)
+            res = requests.post(url, json=payload, timeout=180)
             if res.status_code == 200:
                 return res.json().get("response", "Error: Empty response.")
             return f"Ollama Error: {res.text}"

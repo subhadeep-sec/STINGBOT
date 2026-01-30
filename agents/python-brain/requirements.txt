@@ -7,3 +7,6 @@ flask-cors
 colorama
 docker
 pyautogui
+chromadb
+langchain-community
+sentence-transformers

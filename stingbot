@@ -1,0 +1,3 @@
+#!/bin/bash
+export PYTHONPATH=$PYTHONPATH:/home/kali/Desktop/stingbot:/home/kali/Desktop/stingbot/agents/python-brain
+python3 /home/kali/Desktop/stingbot/stingbot.py "$@"

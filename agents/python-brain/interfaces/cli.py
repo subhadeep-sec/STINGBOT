@@ -44,7 +44,7 @@ SCORPION_LOGO = r"""
             ||/ /
             |  /
             |_/ 
-     [ GENERALIST NEURAL ENGINE // v1.0 ]
+     [ STING NEURAL ENGINE // v2.0 ]
 """
 
 class CLI:

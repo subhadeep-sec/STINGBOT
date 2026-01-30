@@ -14,13 +14,20 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
 </p>
 
-**Stingbot** is an *autonomous AI security platform* you run on your own devices.
-It leverages advanced LLM reasoning to perform complex security audits, reconnaissance, and exploitation tasks autonomously. It follows a decoupled architecture, separating the **Neural Gateway** (Control Plane) from the **Python Security Brain** (Execution Engine). This allows for a premium Web UI experience combined with the raw power of Python-based offensive tools.
+# STING: Autonomous Multi-Agent Platform 🦂
 
-If you want a personal, autonomous security analyst that feels local, fast, and always-on, this is it.
+**STING** (formerly Stingbot) is a premium, AI-powered Multi-Agent System (MAS) designed for autonomous offensive security missions. Built for zero-cost local execution, it leverages a Supervisor-Agent architecture to decompose complex goals into actionable intelligence.
 
-[Website](https://stingbot.ai) · [Docs](https://docs.stingbot.ai) · [Project Wiki](https://github.com/subhadeep-sec/STINGBOT/wiki) · [Getting Started](https://docs.stingbot.ai/start) · [Wizard](https://docs.stingbot.ai/start/wizard)
+## 🚀 One-Line Installation
 
+Deploy the **STING Neural Engine** to your environment with a single command:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.sh | bash
+```
+
+> [!IMPORTANT]
+> This command will synchronize neural assets, configure your local LLM environment, and establish a global mission control link. Requires **Kali Linux**, **macOS**, or **WSL2**.
 Preferred setup: run the onboarding wizard (`npx stingbot-ai onboard`). It walks through the neural brain setup, security tool parity, and pairing. The CLI wizard is the recommended path and works on **Kali Linux, macOS, and Windows (via WSL2; strongly recommended)**.
 
 ### 🧠 Models (Neural Brain)
