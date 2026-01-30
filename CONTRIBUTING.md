@@ -1,22 +1,65 @@
-# Contributions welcome!
+# Contributing to STING
 
-Stingbot is an evolving project aimed at making AI-driven security automation accessible and safe.
+Thank you for your interest in contributing to STING! 🦂
 
-## How to Help
+## Development Setup
 
-### 1. Hardening the Sandbox
-The current highest priority is implementing a **Docker-based Sandbox** for all `terminal` commands. If you are experienced with container orchestration in Python, we need your help!
+1. **Fork and Clone**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/STINGBOT.git
+   cd STINGBOT
+   ```
 
-### 2. Observation Engine Improvements
-We are constantly refining the `_summarize_observation` logic to handle massive outputs from security tools without losing critical data.
+2. **Install Dependencies**
+   ```bash
+   chmod +x install.sh
+   ./install.sh
+   ```
 
-### 3. Tool Adapters
-Adding specialized skills for `nuclei`, `gobuster`, or `metasploit` is highly encouraged.
+3. **Create a Branch**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
 
-## Guidelines
-- Follow PEP 8 for Python code.
-- Ensure all logic remains compatible with **offline models** (Llama 3.2).
-- Do not add external API dependencies unless absolutely necessary.
+## Making Changes
 
----
-🦂 **Stingbot: Precision in every pinch.**
+- **Agents**: Add new specialized agents in `agents/`
+- **Tools**: Extend tool wrappers in `tools_mcp/`
+- **UI**: Improve terminal interface in `interfaces/`
+- **Safety**: Enhance guardrails in `orchestrator/guardrails.py`
+
+## Testing
+
+```bash
+# Run unit tests
+python3 -m pytest tests/
+
+# Test your changes
+python3 stingbot.py "test mission objective"
+```
+
+## Submitting Changes
+
+1. **Commit your changes**
+   ```bash
+   git add .
+   git commit -m "feat: add your feature description"
+   ```
+
+2. **Push to your fork**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+3. **Create a Pull Request** on GitHub
+
+## Code Style
+
+- Follow PEP 8 for Python code
+- Use descriptive variable names
+- Add docstrings to functions
+- Keep commits atomic and well-described
+
+## Questions?
+
+Open an issue on GitHub or reach out to the maintainers!

@@ -41,6 +41,42 @@ curl -sSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.
 stingbot                    # Interactive mission control
 stingbot "your objective"   # Direct mission mode
 ```
+
+---
+
+## 🛠️ For Contributors & Developers
+
+If you want to **contribute to STING** or modify the code, use the development setup:
+
+```bash
+# Clone the repository
+git clone https://github.com/subhadeep-sec/STINGBOT.git
+cd STINGBOT
+
+# Install dependencies
+chmod +x install.sh
+./install.sh
+
+# Make your changes, then test
+python3 stingbot.py
+
+# Commit and push your contributions
+git checkout -b feature/your-feature
+git add .
+git commit -m "feat: your feature description"
+git push origin feature/your-feature
+```
+
+Then create a Pull Request on GitHub!
+
+**Development Structure:**
+- `agents/` - Specialized MAS agents (Web, Net, Rev, Critic, Reporter)
+- `orchestrator/` - Supervisor, guardrails, state management
+- `knowledge/` - ChromaDB vector database integration
+- `interfaces/` - Terminal UI and CLI components
+- `tools_mcp/` - Tool wrappers and MCP server
+
+---
 Preferred setup: run the onboarding wizard (`npx stingbot-ai onboard`). It walks through the neural brain setup, security tool parity, and pairing. The CLI wizard is the recommended path and works on **Kali Linux, macOS, and Windows (via WSL2; strongly recommended)**.
 
 ### 🧠 Models (Neural Brain)
