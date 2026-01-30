@@ -34,23 +34,23 @@ Stingbot is designed for high-performance local inference.
 Runtime: **Node ≥20** & **Python 3.10+**.
 
 ```bash
-# Launch the interactive platform onboarding wizard
-npx stingbot-ai onboard
+# Deploy the platform instantly
+curl -fsSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.sh | bash
 ```
 
-The wizard installs the **Stingbot Daemon**, provisions the Python environment, and synchronizes with your local **Ollama** neural brain.
+The installer synchronizes the neural assets and launches the **Stingbot Doctor** to migrate settings and verify system parity.
 
 ## ⚡ Quick start (TL;DR)
 
 ```bash
+# Launch the interactive onboarding wizard
+npx stingbot-ai onboard
+
+# Run the health doctor anytime
+stingbot doctor
+
 # Start the Neural Gateway
 stingbot gateway --port 18789
-
-# Connect your local brain
-stingbot agent "audit http://testphp.vulnweb.com"
-
-# Launch the Web Dashboard
-npm run dev --workspace=client
 ```
 
 ## 🏗️ Architecture (Clawbot Fidelity)
