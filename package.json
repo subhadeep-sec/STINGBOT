@@ -1,0 +1,28 @@
+{
+  "name": "stingbot-ai",
+  "version": "1.0.0",
+  "description": "Generalist Neural Engine for Security & Productivity",
+  "main": "index.js",
+  "bin": {
+    "stingbot": "bin/stingbot.js"
+  },
+  "scripts": {
+    "onboard": "node bin/stingbot.js onboard",
+    "install-core": "curl -sSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.sh | bash"
+  },
+  "keywords": [
+    "ai",
+    "security",
+    "hacking",
+    "automation",
+    "neural",
+    "stingbot"
+  ],
+  "author": "subhadeep-sec",
+  "license": "MIT",
+  "dependencies": {
+    "shelljs": "^0.8.5",
+    "chalk": "^5.3.0"
+  },
+  "type": "module"
+}

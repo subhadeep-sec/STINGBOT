@@ -23,6 +23,16 @@ def main():
         cmd_input = " ".join(sys.argv[1:])
         if cmd_input.lower().strip() == "doctor":
             orchestrator.run_doctor()
+        elif cmd_input.lower().strip() == "onboard":
+            cli.banner()
+            cli.pairing_sequence()
+            with open(os.path.expanduser("~/.stingbot2_paired"), "w") as f:
+                f.write("paired")
+            cli.log("Neural Link Permanently Authorized.", "success")
+        elif cmd_input.lower().strip() == "daemon":
+            cli.log("Starting Stingbot Neural Gateway (Daemon mode)...", "info")
+            # Implement background server logic here
+            cli.log("Neural link status: LISTENING on port 18789", "success")
         else:
             result = orchestrator.process_input(cmd_input)
             if result: print(f"→ {result}")

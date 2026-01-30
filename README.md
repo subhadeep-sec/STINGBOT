@@ -53,7 +53,14 @@ graph TD
 
 ## 🚀 Deployment
 
-The fastest way to launch the engine:
+### 1. The Clawbot Way (NPX)
+Launch the interactive onboarding wizard instantly:
+```bash
+npx stingbot-ai onboard
+```
+
+### 2. The One-Line Way (Remote Bash)
+Deploy the engine with a single command:
 ```bash
 curl -sSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.sh | bash
 ```
