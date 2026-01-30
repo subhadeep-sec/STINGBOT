@@ -18,7 +18,7 @@
 
 **STING** (formerly Stingbot) is a premium, AI-powered Multi-Agent System (MAS) designed for autonomous offensive security missions. Built for zero-cost local execution, it leverages a Supervisor-Agent architecture to decompose complex goals into actionable intelligence.
 
-## 🚀 One-Line Installation
+## 🚀 single-command Installation
 
 Deploy **STING** to your system with a single command:
 
