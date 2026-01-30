@@ -20,14 +20,27 @@
 
 ## 🚀 One-Line Installation
 
-Deploy the **STING Neural Engine** to your environment with a single command:
+Deploy **STING** to your system with a single command:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.sh | bash
 ```
 
 > [!IMPORTANT]
-> This command will synchronize neural assets, configure your local LLM environment, and establish a global mission control link. Requires **Kali Linux**, **macOS**, or **WSL2**.
+> **Requirements**: Kali Linux, macOS, or WSL2 with Python 3.10+ and Node.js 20+
+
+**What happens during installation:**
+1. 🔐 Security clearance and neural operating agreement
+2. 🧠 LLM provider selection (Ollama, OpenAI, Anthropic, or Gemini)
+3. 🔧 Automatic dependency installation and environment setup
+4. 🦂 Global `stingbot` command configuration
+5. 📊 Diagnostic health check and verification
+
+**Launch STING:**
+```bash
+stingbot                    # Interactive mission control
+stingbot "your objective"   # Direct mission mode
+```
 Preferred setup: run the onboarding wizard (`npx stingbot-ai onboard`). It walks through the neural brain setup, security tool parity, and pairing. The CLI wizard is the recommended path and works on **Kali Linux, macOS, and Windows (via WSL2; strongly recommended)**.
 
 ### 🧠 Models (Neural Brain)
