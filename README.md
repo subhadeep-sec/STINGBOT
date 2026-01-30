@@ -87,40 +87,17 @@ Stingbot is designed for high-performance local inference.
 
 
 
-## 🎮 The Master Guide: How to use Stingbot
+## 🎮 Usage
 
-Once installed, Stingbot operates as a decoupled neural platform. Follow these steps to launch your first mission.
+Once installed, Stingbot is ready for action. To start the platform:
 
-### 1. Initialize the Gateway
-The Gateway is the "Control Plane". It manages connections between the Web UI and the Python Brain.
 ```bash
-# Run the gateway locally
-node gateway/bin/onboard.js gateway
-```
-*Look for: `🦂 STINGBOT GATEWAY ACTIVE` on port 18789.*
-
-### 2. Run a Neural Health Check
-Always ensure your system parity is correct before a mission.
-```bash
-node gateway/bin/onboard.js doctor
+stingbot
 ```
 
-### 3. Operate the Python Brain (Legacy/CLI)
-For direct interaction with the offensive engine without the web interface:
-```bash
-cd agents/python-brain
-python3 main.py
-```
-
-### 4. Interactive Onboarding
-If you ever need to re-configure your link:
-```bash
-# Locally
-node gateway/bin/onboard.js onboard
-
-# Or via NPX (if published)
-npx stingbot-ai onboard
-```
+> **Note**: The installation script automatically runs the Neural Health Check and Interactive Onboarding. If you need to re-run them later:
+> - `stingbot doctor` - Run system diagnostics
+> - `stingbot onboard` - Re-configure the platform
 
 ## 🏗️ Architecture (Clawbot Fidelity)
 

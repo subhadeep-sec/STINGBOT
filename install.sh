@@ -69,5 +69,28 @@ if [ -d "$HOME/.local/bin" ]; then
     done
 fi
 
+
+# 6. Neural Diagnostics & Onboarding
+echo "→ Running System Diagnostics..."
+# Ensure we can capture input even when piped from curl
+if [ -t 0 ]; then
+    node gateway/bin/onboard.js doctor
+    
+    echo -e "\n\033[1;36m→ Starting Interactive Onboarding...\033[0m"
+    node gateway/bin/onboard.js onboard
+else
+    # If not interactive (e.g. piped completely without TTY), try to force TTY or warn
+    # Attempt to reopen tty
+    if [ -e /dev/tty ]; then
+        exec < /dev/tty
+        node gateway/bin/onboard.js doctor
+        echo -e "\n\033[1;36m→ Starting Interactive Onboarding...\033[0m"
+        node gateway/bin/onboard.js onboard
+    else
+        echo "⚠ Non-interactive mode detected. Skipping interactive onboarding."
+        echo "Run 'stingbot doctor' and 'stingbot onboard' manually."
+    fi
+fi
+
 echo -e "\n\033[1;32m✓ STINGBOT INSTALLATION SUCCESSFUL\033[0m"
 echo "Launch with: stingbot (restart terminal or run: source ~/.zshrc)"
