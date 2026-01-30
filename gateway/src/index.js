@@ -22,6 +22,6 @@ io.on('connection', (socket) => {
 });
 
 httpServer.listen(PORT, () => {
-    console.log(chalk.cyan(`\n🦂 KALIKA GATEWAY ACTIVE`));
+    console.log(chalk.cyan(`\n🦂 STINGBOT GATEWAY ACTIVE`));
     console.log(chalk.gray(`→ Control Plane: http://localhost:${PORT}`));
 });

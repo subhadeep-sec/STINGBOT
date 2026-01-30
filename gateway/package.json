@@ -1,10 +1,10 @@
 {
-    "name": "@kalika/gateway",
+    "name": "@stingbot/gateway",
     "version": "1.0.0",
     "type": "module",
     "main": "index.js",
     "bin": {
-        "kalika": "bin/onboard.js"
+        "stingbot": "bin/onboard.js"
     },
     "dependencies": {
         "express": "^4.19.0",

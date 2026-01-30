@@ -1,7 +1,7 @@
-# 🦂 Kalika — Neural Security Platform
+# 🦂 Stingbot — Neural Security Platform
 
 <p align="center">
-    <img src="docs/assets/logo.png" alt="Kalika" width="500">
+    <img src="docs/assets/logo.png" alt="Stingbot" width="500">
 </p>
 
 <p align="center">
@@ -13,10 +13,10 @@
   <a href="https://github.com/subhadeep-sec/STINGBOT/releases"><img src="https://img.shields.io/github/v/release/subhadeep-sec/STINGBOT?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
 </p>
 
-**Kalika** is an *autonomous AI security platform* built for the neural age. 
+**Stingbot** is an *autonomous AI security platform* built for the neural age. 
 It follows a decoupled architecture, separating the **Neural Gateway** (Control Plane) from the **Python Security Brain** (Execution Engine). This allows for a premium Web UI experience combined with the raw power of Python-based offensive tools.
 
-[Official Docs](https://docs.kalika.ai) · [Project Wiki](https://github.com/subhadeep-sec/STINGBOT/wiki) · [Onboarding Wizard](https://docs.kalika.ai/start)
+[Official Docs](https://docs.stingbot.ai) · [Project Wiki](https://github.com/subhadeep-sec/STINGBOT/wiki) · [Onboarding Wizard](https://docs.stingbot.ai/start)
 
 ### 💎 The Platform Strategy
 - **Frontend**: Premium React/Vite dashboard for mission monitoring.
@@ -29,19 +29,19 @@ Runtime: **Node ≥20** & **Python 3.10+**.
 
 ```bash
 # Launch the interactive platform onboarding wizard
-npx kalika onboard
+npx stingbot-ai onboard
 ```
 
-The wizard installs the **Kalika Daemon**, provisions the Python environment, and synchronizes with your local **Ollama** neural brain.
+The wizard installs the **Stingbot Daemon**, provisions the Python environment, and synchronizes with your local **Ollama** neural brain.
 
 ## ⚡ Quick Start
 
 ```bash
 # Start the Neural Gateway
-kalika gateway --port 18789
+stingbot gateway --port 18789
 
 # Connect your local brain
-kalika agent "audit http://testphp.vulnweb.com"
+stingbot agent "audit http://testphp.vulnweb.com"
 
 # Launch the Web Dashboard
 npm run dev --workspace=client

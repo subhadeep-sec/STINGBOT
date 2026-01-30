@@ -4,8 +4,8 @@ import path from 'path';
 import os from 'os';
 import chalk from 'chalk';
 
-console.log(chalk.cyan("\n🦂 KALIKA — NEURAL PLATFORM ONBOARDING"));
-console.log(chalk.gray("--------------------------------------\n"));
+console.log(chalk.cyan("\n🦂 STINGBOT — NEURAL PLATFORM ONBOARDING"));
+console.log(chalk.gray("----------------------------------------\n"));
 
 const installDir = path.join(os.homedir(), 'STINGBOT'); // Keeping path for legacy sync
 
@@ -24,7 +24,7 @@ installer.stderr.on('data', (data) => {
 
 installer.on('close', (code) => {
     if (code === 0) {
-        console.log(chalk.green("\n✓ [PLATFORM] Kalika Gateway Established."));
-        console.log("→ Run " + chalk.bold("kalika doctor") + " to verify parity.");
+        console.log(chalk.green("\n✓ [PLATFORM] Stingbot Gateway Established."));
+        console.log("→ Run " + chalk.bold("stingbot doctor") + " to verify parity.");
     }
 });
