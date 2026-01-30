@@ -51,26 +51,12 @@ graph TD
 
 ---
 
-### 1. VIP Installation (PIP)
-The fastest way to install Stingbot globally:
-```bash
-pip install git+https://github.com/subhadeep-sec/STINGBOT.git
-```
+## 🚀 Deployment
 
-### 2. Fancy One-Line Install
-Run the following command on your terminal to deploy Stingbot instantly:
+The fastest way to launch the engine:
 ```bash
 curl -sSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.sh | bash
 ```
-
-### 2. Manual Installation
-#### Prerequisites
-```bash
-# Clone the repository
-git clone https://github.com/subhadeep-sec/STINGBOT.git
-cd STINGBOT
-
-# Run the lightning setup
 chmod +x setup.sh
 ./setup.sh
 
