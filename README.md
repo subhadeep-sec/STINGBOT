@@ -53,12 +53,14 @@ graph TD
 
 ## 📦 Installation
 
-### 1. Prerequisites
-- **Ollama**: [Download & Install](https://ollama.ai/)
-- **Python 3.10+**
-- **Kali Linux** (Recommended for full security tool parity)
+### 1. Fancy One-Line Install (Recommended)
+Run the following command on your terminal to deploy Stingbot instantly:
+```bash
+curl -sSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.sh | bash
+```
 
-### 2. Setup
+### 2. Manual Installation
+#### Prerequisites
 ```bash
 # Clone the repository
 git clone https://github.com/subhadeep-sec/STINGBOT.git
