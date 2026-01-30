@@ -9,15 +9,31 @@ echo ""
 echo "  🦂 STINGBOT GLOBAL DEPLOYMENT"
 echo "  --------------------------------"
 
-# 1. Verification
-for cmd in git python3; do
+# 2. Dependency Check
+for cmd in git python3 ollama; do
     if ! command -v $cmd &> /dev/null; then
-        echo "✘ Error: $cmd is required but not installed."
-        exit 1
+        if [ "$cmd" == "ollama" ]; then
+            echo "→ [WIZARD] Ollama not found. Please install it from https://ollama.ai/"
+        else
+            echo "✘ Error: $cmd is required but not installed."
+            exit 1
+        fi
     fi
 done
 
-# 2. Cloning/Syncing
+# 3. Neural Brain Check
+if command -v ollama &> /dev/null; then
+    echo "→ Checking Neural Brain (Llama 3.2)..."
+    if ! ollama list | grep -q "llama3.2"; then
+        echo "→ [WIZARD] Pulling Llama 3.2 engine (this may take a moment)..."
+        ollama pull llama3.2
+        echo "✓ Neural Brain synchronized."
+    else
+        echo "✓ Neural Brain ready."
+    fi
+fi
+
+# 4. Cloning/Syncing
 if [ -d "$INSTALL_DIR" ]; then
     echo "✓ Existing assets detected. Synchronizing..."
     cd "$INSTALL_DIR" && git pull || { echo "✘ Update failed."; exit 1; }
