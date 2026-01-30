@@ -1,104 +1,69 @@
-# 🦂 Stingbot — Neural Security Engine
+# 🦂 Kalika — Neural Security Platform
 
 <p align="center">
-    <img src="docs/assets/logo.png" alt="Stingbot" width="500">
+    <img src="docs/assets/logo.png" alt="Kalika" width="500">
 </p>
 
 <p align="center">
-  <strong>NEURIZE! EXPLOIT! SECURE!</strong>
+  <strong>EXPLOIT! EXFILTRATE! EVOLVE!</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/subhadeep-sec/STINGBOT/actions"><img src="https://img.shields.io/github/actions/workflow/status/subhadeep-sec/STINGBOT/ci.yml?branch=main&style=for-the-badge" alt="CI status"></a>
-  <a href="https://github.com/subhadeep-sec/STINGBOT/releases"><img src="https://img.shields.io/github/v/release/subhadeep-sec/STINGBOT?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
+  <a href="https://github.com/subhadeep-sec/STINGBOT/releases"><img src="https://img.shields.io/github/v/release/subhadeep-sec/STINGBOT?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
 </p>
 
-**Stingbot** is a *generalist neural engine* for offensive security and autonomous workflow automation.
-It leverages advanced LLM reasoning to perform complex security audits, reconnaissance, and exploitation tasks autonomously. Designed for Kali Linux but optimized for any Unix environment, Stingbot transforms raw security tools into a coordinated, intelligent offensive platform.
+**Kalika** is an *autonomous AI security platform* built for the neural age. 
+It follows a decoupled architecture, separating the **Neural Gateway** (Control Plane) from the **Python Security Brain** (Execution Engine). This allows for a premium Web UI experience combined with the raw power of Python-based offensive tools.
 
-If you want a personal, autonomous security analyst that feels fast, lethal, and always-on, this is it.
+[Official Docs](https://docs.kalika.ai) · [Project Wiki](https://github.com/subhadeep-sec/STINGBOT/wiki) · [Onboarding Wizard](https://docs.kalika.ai/start)
 
-[Website](https://stingbot.ai) · [Docs](https://docs.stingbot.ai) · [Getting Started](https://docs.stingbot.ai/start) · [Wizard](https://docs.stingbot.ai/start/wizard)
+### 💎 The Platform Strategy
+- **Frontend**: Premium React/Vite dashboard for mission monitoring.
+- **Gateway**: Node.js/Express WebSocket server for real-time log streaming.
+- **Brain**: Headless Python Engine for autonomous tool orchestration.
 
-Preferred setup: run the onboarding wizard (`npx stingbot-ai onboard`). It walks through the neural brain setup, security tool parity, and pairing. The CLI wizard is the recommended path and works on **Kali Linux, macOS, and WSL2**.
+## 📦 Installation (The Platform Way)
 
-## 🧠 Models (Neural Brain)
-
-Stingbot is designed for high-performance local inference. 
-- **Ollama (Recommended)**: Run `llama3.2` or `mistral` locally for maximum privacy.
-- **Failover**: Supports fallback to cloud models if local resources are constrained.
-
-## � Install (recommended)
-
-Runtime: **Python 3.10+** & **Node ≥20**.
+Runtime: **Node ≥20** & **Python 3.10+**.
 
 ```bash
-# Launch the interactive onboarding wizard
-npx stingbot-ai onboard
+# Launch the interactive platform onboarding wizard
+npx kalika onboard
 ```
 
-The wizard ensures your environment is hardened, security tools are bridged, and the neural brain is synchronized.
+The wizard installs the **Kalika Daemon**, provisions the Python environment, and synchronizes with your local **Ollama** neural brain.
 
-## ⚡ Quick start
+## ⚡ Quick Start
 
 ```bash
-# Establish the neural link
-stingbot onboard
+# Start the Neural Gateway
+kalika gateway --port 18789
 
-# Execute an autonomous mission
-stingbot "perform a scan on testphp.vulnweb.com and look for SQLi"
+# Connect your local brain
+kalika agent "audit http://testphp.vulnweb.com"
 
-# Run the health doctor
-stingbot doctor
+# Launch the Web Dashboard
+npm run dev --workspace=client
 ```
 
-## 🦂 Highlights
+## 🏗️ Architecture (Clawbot Fidelity)
 
-- **[Autonomous Offensive Engine](https://docs.stingbot.ai/core)** — Real-time reasoning loop for complex exploitation chains.
-- **[Neural Security Gateway](https://docs.stingbot.ai/gateway)** — Centralized control plane for sessions, tools, and events.
-- **[Multi-Tool Parity](https://docs.stingbot.ai/tools)** — Native integration with `nmap`, `sqlmap`, `nikto`, `scapy`, and more.
-- **[Interactive CLI/TUI](https://docs.stingbot.ai/interfaces)** — Premium terminal experience with real-time log streaming.
+```
+Web Dashboard (React) <─── Socket.io ───> Neural Gateway (Node.js)
+                                            │
+                                            ▼
+                                     Python Brain (RPC)
+                                            │
+                                  ┌─────────┴─────────┐
+                                  ▼                   ▼
+                           Security Tools       Local LLM (Ollama)
+```
 
-## 🛠️ Everything we built so far
-
-### Core platform
-- [Neural Orchestrator](https://docs.stingbot.ai/core) with autonomous feedback loops and error correction.
-- [CLI/TUI surface](https://docs.stingbot.ai/interfaces) with rich logging and interactive pairing.
-- [Tool Integration Layer](https://docs.stingbot.ai/tools) for sub-process execution and result synthesis.
-
-### Security Modules
-- [Reconnaissance](https://docs.stingbot.ai/modules/recon): Port scanning, service discovery, and banner grabbing.
-- [Exploitation](https://docs.stingbot.ai/modules/exploit): SQL injection, XSS discovery, and CVE research.
-- [Reporting](https://docs.stingbot.ai/modules/reporting): Automated generation of technical audit summaries.
+## �️ Components
+- **`gateway/`**: The Node.js WebSocket control plane.
+- **`client/`**: The React/Vite premium web interface.
+- **`agents/python-brain/`**: The core offensive security engine.
 
 ---
-
-## 🏗️ How it works
-
-```
-Operator Commands (Terminal)
-               │
-               ▼
-┌───────────────────────────────┐
-│       Neural Orchestrator     │
-│       (The Brain & Logic)     │
-└──────────────┬────────────────┘
-               │
-               ├─ Security Tool Layer (sqlmap, nmap, etc.)
-               ├─ LLM Reasoning Logic (Local Ollama / Cloud)
-               ├─ Interface Layer (CLI, TUI, Dashboard)
-               └─ Observation Engine (Error Correction)
-```
-
-## 🔒 Security Model
-
-- **Local-First**: Reasoning happens on your machine.
-- **Consent-Based**: All neural links require explicit pairing codes.
-- **Sandboxing**: Security tools run in restricted sub-processes.
-
----
-
-## � Credits
-Stingbot is inspired by the **OpenClaw** philosophy of personal AI assistants.
-Built for the community. **Stay Lethal.**
+Built with intensity. **Stay Lethal.** 🦂
