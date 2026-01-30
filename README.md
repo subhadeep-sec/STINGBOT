@@ -61,8 +61,8 @@ graph TD
 ### 2. Setup
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/stingbot.git
-cd stingbot
+git clone https://github.com/subhadeep-sec/STINGBOT.git
+cd STINGBOT
 
 # Run the lightning setup
 chmod +x setup.sh
