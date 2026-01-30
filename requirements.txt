@@ -1,0 +1,9 @@
+rich
+textual
+requests
+psutil
+flask
+flask-cors
+colorama
+docker
+pyautogui

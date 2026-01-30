@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Config & Secrets
+.stingbot2.json
+.env
+~/.stingbot*
+
+# Brain & Agent State
+.gemini/
+brain/
+data/logs/
+missions/
+
+# Local Tools & Temp
+*.log
+f.txt
+status.txt
+system_info.py
+test2.py
+data/reports/
+
+# IDEs
+.vscode/
+.idea/
