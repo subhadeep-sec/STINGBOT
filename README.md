@@ -23,7 +23,7 @@
 Deploy **STING** to your system with a single command:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.sh | bash
 ```
 
 > [!IMPORTANT]
@@ -85,13 +85,7 @@ Stingbot is designed for high-performance local inference.
 - **Ollama (Recommended)**: Run `llama3.2` or `mistral` locally for maximum privacy.
 - **Failover**: Supports fallback to cloud models if local resources are constrained.
 
-## 📦 Installation (One-Line)
 
-Stingbot is designed for instant deployment. Copy and paste:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.sh | bash
-```
 
 ## 🎮 The Master Guide: How to use Stingbot
 
