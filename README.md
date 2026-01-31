@@ -1,4 +1,4 @@
-# 🦂 STINGBOT: Advanced Neural Security Engine
+# 🦂 STINGBOT: Molt-Standard Neural Security Engine
 
 ![STINGBOT Banner](docs/assets/banner.png)
 
@@ -6,16 +6,16 @@
   <img src="https://img.shields.io/github/actions/workflow/status/subhadeep-sec/STINGBOT/ci.yml?branch=main&style=for-the-badge" alt="CI Status">
   <img src="https://img.shields.io/github/v/release/subhadeep-sec/STINGBOT?include_prereleases&style=for-the-badge" alt="Release">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License">
-  <img src="https://img.shields.io/badge/Platform-Kali%20|%20macOS%20|%20WSL2-red?style=for-the-badge" alt="Platform">
+  <img src="https://img.shields.io/badge/Standard-Moltbot--Elite-gold?style=for-the-badge" alt="Standard">
 </p>
 
 ---
 
 ## 🌟 Overview
 
-**STINGBOT** is a state-of-the-art, AI-driven Multi-Agent System (MAS) engineered for autonomous offensive security operations. By harmonizing a sophisticated Supervisor-Agent architecture with advanced neural reasoning, STINGBOT transforms high-level security objectives into precise, actionable intelligence.
+**STINGBOT** is a flagship, AI-driven Multi-Agent System (MAS) built to the prestigious **Moltbot Standard** of autonomous offensive security. It represents the pinnacle of autonomous orchestration, utilizing a refined Supervisor-Agent framework to execute high-fidelity security operations.
 
-Designed for high-fidelity security research, STINGBOT enables security professionals to orchestrate complex missions—from clandestine network reconnaissance to deep binary analysis—with unprecedented autonomy and safety.
+Designed for precision and lethal efficiency, STINGBOT enables elite security practitioners to deploy autonomous clusters for complex missions, providing deep insights through neural reasoning and sophisticated memory systems.
 
 ---
 
@@ -23,12 +23,12 @@ Designed for high-fidelity security research, STINGBOT enables security professi
 
 | Feature | Description |
 | :--- | :--- |
-| **Autonomous Logic** | Self-decomposing mission goals and dynamic turn-based reasoning. |
-| **Multi-Agent Core** | Orchestrated specialists: WebPentester, NetPentester, RevEngineer, and more. |
-| **Neural Memory** | Stateful attack graphs and ChromaDB-powered episodic & semantic memory. |
-| **Safety First** | Multi-layer execution guardrails and target verification system. |
-| **Unified Command** | High-performance CLI interface paired with a modern React Dashboard. |
-| **Model Agnostic** | Seamless integration with Ollama, OpenAI, Anthropic, and Google Gemini. |
+| **Molt-Standard Intelligence** | Advanced turn-based reasoning and goal decomposition. |
+| **Elite Multi-Agent Core** | Coordinated specialists: WebPentester, NetPentester, RevEngineer. |
+| **Neural Memory** | Full state persistence with ChromaDB-powered associative recall. |
+| **Sovereign Safety** | Deterministic command blacklisting and target validation layers. |
+| **Unified Command** | High-performance CLI paired with a premium React Mission Control. |
+| **Model Agnostic** | Seamless support for Ollama, OpenAI, Anthropic, and Gemini. |
 
 ---
 
@@ -36,65 +36,49 @@ Designed for high-fidelity security research, STINGBOT enables security professi
 
 ### Prerequisites
 
-Ensure your environment meets the following requirements:
-- **Python**: 3.10+ (Dedicated 3.10 recommended for neural dependencies)
-- **Node.js**: 18.x or above
-- **Architecture**: Linux (Kali preferred), macOS, or WSL2
+- **Python**: 3.10+
+- **Node.js**: 18.x+
+- **Platform**: Linux (Kali), macOS, or WSL2
 
-### Installation
+### Deployment
 
-Deploy the engine in a single command:
+Initialize the engine:
 
 ```bash
-# Clone and Initialize
 git clone https://github.com/subhadeep-sec/STINGBOT.git && cd STINGBOT
-
-# Run the Intelligent Installer
 ./install.sh
 ```
 
-### Basic Usage
-
-Launch the mission control center:
+### Direct Mission
 
 ```bash
-# Direct Mission Invocation
-stingbot "Analyze demo-app.local for SQL injection vulnerabilities"
-
-# Interactive Terminal Mode
-stingbot --interactive
+stingbot "Analyze demo-app.local for security vulnerabilities"
 ```
 
 ---
 
 ## 🏗️ System Architecture
 
-STINGBOT operates on a distributed neural architecture, separating high-level reasoning from specialized tool execution.
+STINGBOT operates on a distributed neural framework, ensuring high-durability orchestration.
 
 ```mermaid
 graph TD
-    User([Security Operator]) --> CLI[Rich CLI Interface]
-    User --> Web[React Dashboard]
+    User([Security Operator]) --> CLI[Elite CLI]
+    User --> Web[Mission Control React]
     
-    subgraph "Core Orchestration"
+    subgraph "Orchestration Layer"
         CLI --> Supervisor[Mission Supervisor]
         Web --> Gateway[Neural Gateway]
         Gateway --> Supervisor
-        Supervisor --> State[State Manager & Attack Graph]
-        Supervisor --> Memory[(Neural Memory System)]
+        Supervisor --> State[State Manager]
+        Supervisor --> Memory[(Molt-Standard Memory)]
     end
     
-    subgraph "Agent specialists"
+    subgraph "Agent Clusters"
         Supervisor --> WebAgent[WebPentester]
         Supervisor --> NetAgent[NetPentester]
         Supervisor --> RevAgent[RevEngineer]
-        Supervisor --> Critic[Critic / Self-Correction]
-    end
-    
-    subgraph "Tool Integration"
-        WebAgent --> SQLMap[SQLMap / Nikto]
-        NetAgent --> Nmap[Nmap / Masscan]
-        RevAgent --> Radare2[Radare2 / GDB]
+        Supervisor --> Critic[Verification Critic]
     end
 ```
 
@@ -102,40 +86,25 @@ graph TD
 
 ## 🛡️ Safety & Responsible Use
 
-STINGBOT is equipped with a rigorous safety subsystem designed to enforce Rules of Engagement (RoE):
+Built with professional standards, STINGBOT enforces strict Rules of Engagement:
 
 > [!IMPORTANT]
-> **Deterministic Filtering**: All commands are processed through a regex-based blacklist to prevent destructive actions (e.g., `rm -rf /`).
-> **Target Validation**: Missions are restricted to authorized IP ranges and hostnames defined in the configuration.
-> **Human-in-the-Loop**: Critical actions can be configured to require operator manual approval.
-
----
-
-## 🛠️ Development & Customization
-
-The platform is designed for extensibility. New agents can be integrated into the ecosystem by inheriting from `BaseAgent` and implementing the `execute` life cycle.
-
-```python
-from agents.base_agent import BaseAgent
-
-class CustomAgent(BaseAgent):
-    def execute(self, task):
-        # Neural reasoning + Tool invocation
-        pass
-```
+> **Command Filtering**: Autonomous actions are audited against a deterministic safety blacklist.
+> **Target Validation**: Execution is restricted to authorized environments and IP ranges.
+> **Operator Override**: Full manual control is available via the CLI and Dashboard.
 
 ---
 
 ## 📜 License
 
-Distributed under the **MIT License**. See `LICENSE` for more information.
+Distributed under the **MIT License**.
 
 ## ⚠️ Disclaimer
 
-STINGBOT is for **authorized security testing and educational purposes only**. Misuse of this software for unauthorized access to systems is illegal and unethical. The developers assume no liability for any damage caused by this tool.
+STINGBOT is for **authorized testing and educational use only**. The developers assume no liability for unauthorized usage.
 
 ---
 
 <p align="center">
-  Generated by the NEUROSEC-AI Core. <strong>STAY LETHAL.</strong> 🦂
+  <strong>Molt-Standard Flagship. STAY LETHAL.</strong> 🦂
 </p>

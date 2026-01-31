@@ -3,29 +3,17 @@
         "nodes": [],
         "edges": [],
         "metadata": {
-            "start_time": "2026-01-31T21:51:50.469631",
+            "start_time": "2026-01-31T22:24:48.985433",
             "status": "active"
         }
     },
     "memory": {
-        "mission_goal": "--help",
-        "initial_plan": "Gemini API Error: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n",
+        "mission_goal": "Who are you?",
+        "initial_plan": "Gemini Error: Max retries exceeded (Quota/Rate Limit).",
         "errors": [
             "Turn 1: Unknown agent 'unknown' requested for task: ",
             "Turn 2: Unknown agent 'unknown' requested for task: ",
-            "Turn 3: Unknown agent 'unknown' requested for task: ",
-            "Turn 4: Unknown agent 'unknown' requested for task: ",
-            "Turn 5: Unknown agent 'unknown' requested for task: ",
-            "Turn 6: Unknown agent 'unknown' requested for task: ",
-            "Turn 7: Unknown agent 'unknown' requested for task: ",
-            "Turn 8: Unknown agent 'unknown' requested for task: ",
-            "Turn 9: Unknown agent 'unknown' requested for task: ",
-            "Turn 10: Unknown agent 'unknown' requested for task: ",
-            "Turn 11: Unknown agent 'unknown' requested for task: ",
-            "Turn 12: Unknown agent 'unknown' requested for task: ",
-            "Turn 13: Unknown agent 'unknown' requested for task: ",
-            "Turn 14: Unknown agent 'unknown' requested for task: ",
-            "Turn 15: Unknown agent 'unknown' requested for task: "
+            "Turn 3: Unknown agent 'unknown' requested for task: "
         ]
     }
 }
