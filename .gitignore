@@ -12,6 +12,7 @@ __pycache__/
 .gemini/
 brain/
 data/logs/
+logs/
 missions/
 
 # Local Tools & Temp
