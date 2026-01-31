@@ -115,7 +115,7 @@ class MASTerminal:
         # In a full system, the LLM would return a 'action_required' flag.
         keywords = ["run", "scan", "test", "attack", "exploit", "mission"]
         if any(k in user_input.lower() for k in keywords) and len(user_input) > 10:
-             if cli.confirm("Shall I execute this as a mission?"):
+             if cli.ask_confirm("Shall I execute this as a mission?"):
                  self._run_mission(user_input)
 
     def _run_mission(self, goal):
@@ -141,7 +141,7 @@ class MASTerminal:
 
     def _run_legacy_mission(self, goal):
         """Fallback for non-autonomous mode."""
-        if cli.confirm(f"Start mission: '{goal}'?"):
+        if cli.ask_confirm(f"Start mission: '{goal}'?"):
             self._run_mission(goal)
 
     def _print_agent_response(self, response_obj):
