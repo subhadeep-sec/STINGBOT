@@ -11,7 +11,7 @@ class LLMAdapter:
         self.model = config.LLM_MODEL
         self.base_url = "http://localhost:11434"
 
-    def query(self, prompt, system_prompt="You are STINGBOT v2 [GENERALIST NEURAL ENGINE]. You handle cybersecurity tasks and daily productivity with lethal efficiency. Be precise, fast, and helpful.", max_retries=3):
+    def query(self, prompt, system_prompt="You are STINGBOT. Be precise, fast, and technical.", max_retries=3):
         """Query the configured LLM provider with automatic retry and fallback."""
         for attempt in range(max_retries):
             try:
