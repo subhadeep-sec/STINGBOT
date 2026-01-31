@@ -31,6 +31,8 @@ node_modules/
 dist/
 build/
 *.log
+tmp_install/
+test_workspace/
 
 # Environments
 venv/

@@ -13,7 +13,8 @@
         "errors": [
             "Turn 1: Unknown agent 'unknown' requested for task: ",
             "Turn 2: Unknown agent 'unknown' requested for task: ",
-            "Turn 3: Unknown agent 'unknown' requested for task: "
+            "Turn 3: Unknown agent 'unknown' requested for task: ",
+            "Turn 4: Unknown agent 'unknown' requested for task: "
         ]
     }
 }
