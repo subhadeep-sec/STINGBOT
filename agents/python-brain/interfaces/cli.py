@@ -11,34 +11,35 @@ import time
 
 console = Console()
 
-# Premium Color Palette (HSL inspired)
-COLOR_PRIMARY = "#ff0055"  # Vibrant Neon Pink/Red
-COLOR_SECONDARY = "#00f2ff" # Electric Cyan
-# Master Color Palette (High-Fidelity Style)
-COLOR_PRIMARY = "#ff0055"  # Neon Red/Pink
-COLOR_SECONDARY = "#00f2ff" # Cyan
-COLOR_ACCENT = "#bc00ff"    # Purple
+# Master Color Palette (Moltbot-Standard High-Fidelity)
+COLOR_PRIMARY = "#ff003c"    # Molt-Red (Aggressive)
+COLOR_SECONDARY = "#00f7ff"  # Neural-Cyan (Technical)
+COLOR_ACCENT = "#ffbf00"     # Elite-Gold (Premium)
+COLOR_SUCCESS = "#00ff88"    # Matrix-Green
 COLOR_BG = "#0a0a0a"
 
 SCORPION_LOGO = """
-\033[91m              ___
-           .-'     '-.
-          /  \033[96m_     _\033[91m  \\
-         |  \033[95m/ \\   / \\\033[91m  |
-         | \033[95m|   \\ /   |\033[91m |
-          \\ \033[95m\\_  V  _/\033[91m /
-           '\033[96m-._   _.-\033[91m'
-         \033[96m    /  |  \\\033[91m
-        \033[96m   /   |   \\\033[91m
-       \033[96m   |   |   |\033[91m
-        \033[96m  |   |   |\033[91m
-         \033[96m |  / \\  |\033[91m
-          \033[96m\\_/   \\_/\033[91m
-           \033[90m|  .  |\033[91m
-            \033[90m\\ . /\033[91m
-             \033[90m\\_/\033[91m
-              \033[90mo\033[0m
-"""
+\033[38;5;196m              ___
+\033[38;5;196m           .-'     '-.
+\033[38;5;196m          /  \033[38;5;51m_     _\033[38;5;196m  \\
+\033[38;5;196m         |  \033[38;5;51m(o)   (o)\033[38;5;196m  |
+\033[38;5;196m         | \033[38;5;51m\\   ^   /\033[38;5;196m |
+\033[38;5;196m          \\ \033[38;5;51m'-.   .-'\033[38;5;196m /       \033[38;5;220m[ STINGBOT v2.0 ]\033[38;5;196m
+\033[38;5;196m           '\033[38;5;51m-._\033[38;5;196m| |_\033[38;5;51m.-'\033[38;5;196m         \033[38;5;244mNeural Recon Engine\033[38;5;196m
+\033[38;5;51m               | |
+\033[38;5;51m            __/   \\__
+\033[38;5;51m           /         \\
+\033[38;5;51m          (           )
+\033[38;5;51m           \\__     __/
+\033[38;5;51m              |   |
+\033[38;5;196m         _    |   |    _
+\033[38;5;196m        / \\   |   |   / \\
+\033[38;5;196m       (   )  |   |  (   )
+\033[38;5;196m        \\_/   |   |   \\_/
+\033[38;5;240m              | . |
+\033[38;5;240m               \\ /
+\033[38;5;240m                V
+\033[0m"""
 
 class CLI:
     def banner(self):

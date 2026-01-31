@@ -1,63 +1,56 @@
-# 🦂 STINGBOT: Molt-Standard Neural Security Engine
+# 🦂 STINGBOT: The Sovereign Neural Security Engine
 
 ![STINGBOT Banner](docs/assets/banner.png)
 
 <p align="center">
   <img src="https://img.shields.io/github/actions/workflow/status/subhadeep-sec/STINGBOT/ci.yml?branch=main&style=for-the-badge" alt="CI Status">
-  <img src="https://img.shields.io/github/v/release/subhadeep-sec/STINGBOT?include_prereleases&style=for-the-badge" alt="Release">
-  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License">
-  <img src="https://img.shields.io/badge/Standard-Moltbot--Elite-gold?style=for-the-badge" alt="Standard">
+  <img src="https://img.shields.io/github/stars/subhadeep-sec/STINGBOT?style=for-the-badge&color=gold" alt="Stars">
+  <img src="https://img.shields.io/github/forks/subhadeep-sec/STINGBOT?style=for-the-badge&color=blue" alt="Forks">
+  <img src="https://img.shields.io/github/v/release/subhadeep-sec/STINGBOT?include_prereleases&style=for-the-badge&color=red" alt="Release">
 </p>
 
 ---
 
-## 🌟 Overview
+## 🌟 Sovereign Intelligence. Autonomous Execution.
 
-**STINGBOT** is a flagship, AI-driven Multi-Agent System (MAS) built to the prestigious **Moltbot Standard** of autonomous offensive security. It represents the pinnacle of autonomous orchestration, utilizing a refined Supervisor-Agent framework to execute high-fidelity security operations.
+**STINGBOT** is a high-performance, AI-driven Multi-Agent System (MAS) engineered to the **Moltbot Standard** of autonomous offensive security. Unlike traditional tools, STINGBOT doesn't just scan; it **reasons, learns, and orchestrates** complex security missions with lethal precision.
 
-Designed for precision and lethal efficiency, STINGBOT enables elite security practitioners to deploy autonomous clusters for complex missions, providing deep insights through neural reasoning and sophisticated memory systems.
-
----
-
-## ✨ Key Capabilities
-
-| Feature | Description |
-| :--- | :--- |
-| **Molt-Standard Intelligence** | Advanced turn-based reasoning and goal decomposition. |
-| **Elite Multi-Agent Core** | Coordinated specialists: WebPentester, NetPentester, RevEngineer. |
-| **Neural Memory** | Full state persistence with ChromaDB-powered associative recall. |
-| **Sovereign Safety** | Deterministic command blacklisting and target validation layers. |
-| **Unified Command** | High-performance CLI paired with a premium React Mission Control. |
-| **Model Agnostic** | Seamless support for Ollama, OpenAI, Anthropic, and Gemini. |
+> [!IMPORTANT]
+> **Moltbot Standard**: STINGBOT adheres to the elite standard of autonomous AI, ensuring stateful memory, goal-driven decomposition, and deterministic safety layers.
 
 ---
 
-## 🚀 Quick Start
+## ✨ Core Pillars
 
-### Prerequisites
+- **🧠 Neural Orchestration**: A central Supervisor decomposes high-level goals into tactical sub-missions.
+- **🦂 Multi-Agent Clusters**: Specialized agents for Web, Network, and Reverse Engineering working in parallel.
+- **🔄 Stateful Memory**: Persistent episodic and semantic memory ensures the engine learns from every hex and packet.
+- **🛡️ Sovereign Guardrails**: Hardened safety protocols that validate every command against operator-defined rules.
+- **⚡ Performance First**: Optimized for massive scalability and real-time response.
 
-- **Python**: 3.10+
-- **Node.js**: 18.x+
-- **Platform**: Linux (Kali), macOS, or WSL2
+---
 
-### Deployment
+## 🚀 Deployment Link
 
-Initialize the engine:
+Initialize the sovereign engine in seconds:
 
 ```bash
+# Clone the repository
 git clone https://github.com/subhadeep-sec/STINGBOT.git && cd STINGBOT
+
+# Zero-touch installation
 ./install.sh
 ```
 
-### Direct Mission
-
+### Direct Mission Command
 ```bash
-stingbot "Analyze demo-app.local for security vulnerabilities"
+# Launch a complex mission directly
+stingbot "Analyze the internal network for high-risk vulnerabilities"
 ```
 
 ---
 
-## 🏗️ System Architecture
+## 🏗️ Neural Architecture
 
 STINGBOT operates on a distributed neural framework, ensuring high-durability orchestration.
 
@@ -71,7 +64,7 @@ graph TD
         Web --> Gateway[Neural Gateway]
         Gateway --> Supervisor
         Supervisor --> State[State Manager]
-        Supervisor --> Memory[(Molt-Standard Memory)]
+        Supervisor --> Memory[(Sovereign Memory)]
     end
     
     subgraph "Agent Clusters"
@@ -84,27 +77,35 @@ graph TD
 
 ---
 
-## 🛡️ Safety & Responsible Use
+## 🗺️ Next Generation Roadmap
 
-Built with professional standards, STINGBOT enforces strict Rules of Engagement:
-
-> [!IMPORTANT]
-> **Command Filtering**: Autonomous actions are audited against a deterministic safety blacklist.
-> **Target Validation**: Execution is restricted to authorized environments and IP ranges.
-> **Operator Override**: Full manual control is available via the CLI and Dashboard.
+We are constantly evolving to push the boundaries of autonomous security.
+- [ ] **Multi-Model Swarms**: Dynamic model switching between local (Ollama) and Cloud (Gemini/GPT-4).
+- [ ] **Visual Graph Missions**: Real-time 3D visualization of the attack graph.
+- [ ] **Self-Repairing Exploits**: Autonomous payload refinement based on target feedback.
+- [ ] **Hardware Acceleration**: Optimized CUDA/MLX support for local inference.
 
 ---
 
-## 📜 License
+## 🤝 Community & Contribution
 
-Distributed under the **MIT License**.
+STING is built for the community. Whether you're an AI researcher or an offensive security pro, we welcome your expertise.
 
-## ⚠️ Disclaimer
+- 🐞 **Found a bug?** Open an [Issue](https://github.com/subhadeep-sec/STINGBOT/issues).
+- ✨ **Have an idea?** Start a [Discussion](https://github.com/subhadeep-sec/STINGBOT/discussions).
+- 🛠️ **Want to build?** Check our [Contributing Guide](CONTRIBUTING.md).
 
-STINGBOT is for **authorized testing and educational use only**. The developers assume no liability for unauthorized usage.
+---
+
+## 📜 License & Safety
+
+Distributed under the **MIT License**. STINGBOT is designed for **authorized testing and educational use only**. The developers assume no liability for unauthorized usage.
+
+> [!CAUTION]
+> Always verify your target environment before launching an autonomous mission.
 
 ---
 
 <p align="center">
-  <strong> STAY LETHAL.</strong> 🦂
+  <strong>STAY LETHAL. STAY SOVEREIGN.</strong> 🦂
 </p>
