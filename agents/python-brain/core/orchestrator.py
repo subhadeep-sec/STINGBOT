@@ -4,7 +4,7 @@ from config.settings import config
 from modules.recon import ReconModule
 from modules.audit import AuditModule
 from modules.reporting import ReportingModule
-from interfaces.cli import cli
+from interfaces.cli import cli, COLOR_SECONDARY
 
 class CoreOrchestrator:
     """The Brain: Coordinates Intent -> Plan -> Action."""

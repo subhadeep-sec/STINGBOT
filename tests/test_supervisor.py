@@ -29,5 +29,27 @@ class TestSupervisor(unittest.TestCase):
         res = self.sup.run_mission("Short Mission")
         self.assertIn("[MISSION COMPLETE]", res)
 
+    def test_multi_turn_mission(self):
+        # Test mission with multiple turns
+        self.sup.llm.query.side_effect = [
+            "Plan: Multi-turn mission",
+            "AGENT: web\nTASK: First task",
+            "AGENT: net\nTASK: Second task",
+            "[COMPLETE] Mission complete"
+        ]
+        res = self.sup.run_mission("Multi-turn Mission")
+        self.assertIn("[MISSION COMPLETE]", res)
+
+    def test_unknown_agent_handling(self):
+        # Test handling of unknown agent names
+        self.sup.llm.query.side_effect = [
+            "Plan: Test unknown",
+            "AGENT: unknown_agent\nTASK: Some task",
+            "[COMPLETE] Done"
+        ]
+        # Should not crash with unknown agent
+        res = self.sup.run_mission("Test Unknown Agent")
+        self.assertIsNotNone(res)
+
 if __name__ == '__main__':
     unittest.main()

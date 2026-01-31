@@ -14,11 +14,12 @@ class Settings:
         self.BOT_NAME = "Sting"
         
         # AI Config
-        self.LLM_PROVIDER = "ollama" # ollama, openai, anthropic, gemini, mock
-        self.LLM_MODEL = "llama3.2"
+        self.LLM_PROVIDER = "ollama" # ollama, openai, anthropic, gemini, puter, mock
+        self.LLM_MODEL = "llama3.2"  # Fast local model - alternatives: phi3:mini, qwen2.5:1.5b
         self.OPENAI_KEY = ""
         self.ANTHROPIC_KEY = ""
         self.GEMINI_KEY = ""
+        self.PUTER_API_KEY = ""  # Puter.com API key for free AI access
         
         # Voice Config
         self.VOICE_ENABLED = False

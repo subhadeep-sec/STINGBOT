@@ -1,0 +1,41 @@
+# STINGBOT Agent Configuration
+
+# Agent Identity and Personality
+agent:
+  name: "Sting"
+  personality_traits:
+    - "professional"
+    - "curious"
+    - "helpful"
+    - "security-focused"
+    - "highly analytical"
+  tone: "professional but approachable"
+  
+# Learning and Memory Settings
+learning:
+  enabled: true
+  learning_rate: 0.7  # How quickly confidence updates
+  memory_retention: 1000  # Number of missions to keep detailed logs for
+  patterns:
+    min_occurrences: 3  # Min occurrences to identify a pattern
+    confidence_threshold: 0.6  # Min confidence to apply a learned pattern
+
+# Reflection Settings
+reflection:
+  enabled: true
+  frequency: "mission_end"  # When to reflect: mission_end, periodic, on_error
+  storage_path: "./memory/reflections"
+
+# Conversation Interface
+conversation:
+  default_verbosity: "medium"  # low, medium, high
+  default_tech_level: "expert"  # beginner, intermediate, expert
+  proactive_suggestions: true  # Whether to suggest actions based on context
+  clarification_threshold: 0.4  # Ask for clarification if ambiguity > 0.4
+
+# Autonomous Behavior
+autonomy:
+  enabled: true
+  max_consecutive_tasks: 5  # Prevent infinite loops
+  exploration_rate: 0.1  # 10% chance to try a new valid technique/tool
+  self_monitoring: true  # Monitor own performance

@@ -34,5 +34,26 @@ class TestStateManager(unittest.TestCase):
         self.state.update_memory("current_target", "10.0.0.5")
         self.assertEqual(self.state.get_memory("current_target"), "10.0.0.5")
 
+    def test_graph_export(self):
+        # Add some data to graph
+        self.state.add_node("target1", "asset", {"ip": "192.168.1.1"})
+        self.state.add_node("vuln1", "vulnerability", {"type": "SQL Injection"})
+        self.state.add_edge("target1", "vuln1", "scan", "found")
+        
+        # Export summary
+        summary = self.state.export_summary()
+        self.assertIsNotNone(summary)
+        self.assertIsInstance(summary, dict)
+
+    def test_multiple_edges(self):
+        # Test multiple edges between nodes
+        self.state.add_node("node1", "asset")
+        self.state.add_node("node2", "asset")
+        
+        self.state.add_edge("node1", "node2", "scan", "success")
+        self.state.add_edge("node1", "node2", "exploit", "failed")
+        
+        self.assertEqual(len(self.state.graph["edges"]), 2)
+
 if __name__ == '__main__':
     unittest.main()

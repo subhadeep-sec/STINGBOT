@@ -12,7 +12,10 @@ class Guardrails:
             r"dd\s+if=.*of=/dev/sd",
             r":\(\)\{\s+:\|\:&\s+\}\s*;", # fork bomb
             r"chattr\s+-i",
-            r"mv\s+/.* /dev/null"
+            r"mv\s+/.* /dev/null",
+            r"chmod\s+-R\s+777\s+/",
+            r"\|\s*bash",
+            r"\|\s*sh"
         ]
         
         # Prohibited IP ranges (e.g., Critical Infrastructure, Gov, etc.)

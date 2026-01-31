@@ -1,89 +1,141 @@
-# 🦂 Stingbot — Neural Security Engine
+# 🦂 STINGBOT: Advanced Neural Security Engine
+
+![STINGBOT Banner](docs/assets/banner.png)
 
 <p align="center">
-    <img src="docs/assets/logo.png" alt="Stingbot" width="500">
+  <img src="https://img.shields.io/github/actions/workflow/status/subhadeep-sec/STINGBOT/ci.yml?branch=main&style=for-the-badge" alt="CI Status">
+  <img src="https://img.shields.io/github/v/release/subhadeep-sec/STINGBOT?include_prereleases&style=for-the-badge" alt="Release">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/Platform-Kali%20|%20macOS%20|%20WSL2-red?style=for-the-badge" alt="Platform">
 </p>
 
-<p align="center">
-  <strong>NEURIZE! EXPLOIT! SECURE!</strong>
-</p>
+---
 
-<p align="center">
-  <a href="https://github.com/subhadeep-sec/STINGBOT/actions"><img src="https://img.shields.io/github/actions/workflow/status/subhadeep-sec/STINGBOT/ci.yml?branch=main&style=for-the-badge" alt="CI status"></a>
-  <a href="https://github.com/subhadeep-sec/STINGBOT/releases"><img src="https://img.shields.io/github/v/release/subhadeep-sec/STINGBOT?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
-</p>
+## 🌟 Overview
 
-# STING: Autonomous Multi-Agent Platform 🦂
+**STINGBOT** is a state-of-the-art, AI-driven Multi-Agent System (MAS) engineered for autonomous offensive security operations. By harmonizing a sophisticated Supervisor-Agent architecture with advanced neural reasoning, STINGBOT transforms high-level security objectives into precise, actionable intelligence.
 
-**STING** (formerly Stingbot) is a premium, AI-powered Multi-Agent System (MAS) designed for autonomous offensive security missions. Built for zero-cost local execution, it leverages a Supervisor-Agent architecture to decompose complex goals into actionable intelligence.
+Designed for high-fidelity security research, STINGBOT enables security professionals to orchestrate complex missions—from clandestine network reconnaissance to deep binary analysis—with unprecedented autonomy and safety.
 
-## 🚀 single-command Installation
+---
 
-Deploy **STING** to your system with a single command:
+## ✨ Key Capabilities
+
+| Feature | Description |
+| :--- | :--- |
+| **Autonomous Logic** | Self-decomposing mission goals and dynamic turn-based reasoning. |
+| **Multi-Agent Core** | Orchestrated specialists: WebPentester, NetPentester, RevEngineer, and more. |
+| **Neural Memory** | Stateful attack graphs and ChromaDB-powered episodic & semantic memory. |
+| **Safety First** | Multi-layer execution guardrails and target verification system. |
+| **Unified Command** | High-performance CLI interface paired with a modern React Dashboard. |
+| **Model Agnostic** | Seamless integration with Ollama, OpenAI, Anthropic, and Google Gemini. |
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+Ensure your environment meets the following requirements:
+- **Python**: 3.10+ (Dedicated 3.10 recommended for neural dependencies)
+- **Node.js**: 18.x or above
+- **Architecture**: Linux (Kali preferred), macOS, or WSL2
+
+### Installation
+
+Deploy the engine in a single command:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/subhadeep-sec/STINGBOT/main/install.sh | bash
+# Clone and Initialize
+git clone https://github.com/subhadeep-sec/STINGBOT.git && cd STINGBOT
+
+# Run the Intelligent Installer
+./install.sh
 ```
+
+### Basic Usage
+
+Launch the mission control center:
+
+```bash
+# Direct Mission Invocation
+stingbot "Analyze demo-app.local for SQL injection vulnerabilities"
+
+# Interactive Terminal Mode
+stingbot --interactive
+```
+
+---
+
+## 🏗️ System Architecture
+
+STINGBOT operates on a distributed neural architecture, separating high-level reasoning from specialized tool execution.
+
+```mermaid
+graph TD
+    User([Security Operator]) --> CLI[Rich CLI Interface]
+    User --> Web[React Dashboard]
+    
+    subgraph "Core Orchestration"
+        CLI --> Supervisor[Mission Supervisor]
+        Web --> Gateway[Neural Gateway]
+        Gateway --> Supervisor
+        Supervisor --> State[State Manager & Attack Graph]
+        Supervisor --> Memory[(Neural Memory System)]
+    end
+    
+    subgraph "Agent specialists"
+        Supervisor --> WebAgent[WebPentester]
+        Supervisor --> NetAgent[NetPentester]
+        Supervisor --> RevAgent[RevEngineer]
+        Supervisor --> Critic[Critic / Self-Correction]
+    end
+    
+    subgraph "Tool Integration"
+        WebAgent --> SQLMap[SQLMap / Nikto]
+        NetAgent --> Nmap[Nmap / Masscan]
+        RevAgent --> Radare2[Radare2 / GDB]
+    end
+```
+
+---
+
+## 🛡️ Safety & Responsible Use
+
+STINGBOT is equipped with a rigorous safety subsystem designed to enforce Rules of Engagement (RoE):
 
 > [!IMPORTANT]
-> **Requirements**: Kali Linux, macOS, or WSL2 with Python 3.10+ and Node.js 20+
+> **Deterministic Filtering**: All commands are processed through a regex-based blacklist to prevent destructive actions (e.g., `rm -rf /`).
+> **Target Validation**: Missions are restricted to authorized IP ranges and hostnames defined in the configuration.
+> **Human-in-the-Loop**: Critical actions can be configured to require operator manual approval.
 
-**What happens during installation:**
-1. 🔐 Security clearance and neural operating agreement
-2. 🧠 LLM provider selection (Ollama, OpenAI, Anthropic, or Gemini)
-3. 🔧 Automatic dependency installation and environment setup
-4. 🦂 Global `stingbot` command configuration
-5. 📊 Diagnostic health check and verification
+---
 
-**Launch STING:**
-```bash
-stingbot                    # Interactive mission control
-stingbot "your objective"   # Direct mission mode
+## 🛠️ Development & Customization
+
+The platform is designed for extensibility. New agents can be integrated into the ecosystem by inheriting from `BaseAgent` and implementing the `execute` life cycle.
+
+```python
+from agents.base_agent import BaseAgent
+
+class CustomAgent(BaseAgent):
+    def execute(self, task):
+        # Neural reasoning + Tool invocation
+        pass
 ```
 
 ---
 
-### 🧠 Models (Neural Brain)
+## 📜 License
 
-Stingbot is designed for high-performance local inference.
-- **Ollama (Recommended)**: Run `llama3.2` or `mistral` locally for maximum privacy.
-- **Failover**: Supports fallback to cloud models if local resources are constrained.
+Distributed under the **MIT License**. See `LICENSE` for more information.
 
+## ⚠️ Disclaimer
 
-
-## 🎮 Usage
-
-Once installed, Stingbot is ready for action. To start the platform:
-
-```bash
-stingbot
-```
-
-> **Note**: The installation script automatically runs the Neural Health Check and Interactive Onboarding. If you need to re-run them later:
-> - `stingbot doctor` - Run system diagnostics
-> - `stingbot onboard` - Re-configure the platform
-
-## 🏗️ Architecture (Clawbot Fidelity)
-
-```
-Web Dashboard (React) <─── Socket.io ───> Neural Gateway (Node.js)
-                                            │
-                                            ▼
-                                     Python Brain (RPC)
-                                            │
-                                  ┌─────────┴─────────┐
-                                  ▼                   ▼
-                           Security Tools       Local LLM (Ollama)
-```
-
-## 🛠️ Components
-- **`gateway/`**: The Node.js WebSocket control plane.
-- **`client/`**: The React/Vite premium web interface (Under development).
-- **`agents/python-brain/`**: The core offensive security engine (Python).
-
-## 🔒 Security defaults
-Stingbot is a professional tool. Run `node gateway/bin/onboard.js doctor` to surface any insecure configurations.
+STINGBOT is for **authorized security testing and educational purposes only**. Misuse of this software for unauthorized access to systems is illegal and unethical. The developers assume no liability for any damage caused by this tool.
 
 ---
-Built with intensity. **Stay Lethal.** 🦂
+
+<p align="center">
+  Generated by the NEUROSEC-AI Core. <strong>STAY LETHAL.</strong> 🦂
+</p>

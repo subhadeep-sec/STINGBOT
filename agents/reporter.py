@@ -7,6 +7,7 @@ class ReporterAgent(BaseAgent):
     def __init__(self, workspace_path):
         super().__init__("Reporter", "Compiles session traces into professional Markdown reports.")
         self.log_dir = os.path.join(workspace_path, "logs")
+        os.makedirs(self.log_dir, exist_ok=True)
 
     def execute(self, mission_data):
         # mission_data contains the summary of the attack graph etc.

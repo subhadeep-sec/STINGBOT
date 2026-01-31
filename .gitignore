@@ -25,3 +25,20 @@ data/reports/
 # IDEs
 .vscode/
 .idea/
+
+# Node.js
+node_modules/
+dist/
+build/
+*.log
+
+# Environments
+venv/
+.venv/
+env/
+.env
+
+# ChromaDB & Memory
+memory/
+knowledge_db/
+chroma.sqlite3
