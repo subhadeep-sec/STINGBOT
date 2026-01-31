@@ -106,5 +106,5 @@ STINGBOT is for **authorized testing and educational use only**. The developers 
 ---
 
 <p align="center">
-  <strong>Molt-Standard Flagship. STAY LETHAL.</strong> 🦂
+  <strong> STAY LETHAL.</strong> 🦂
 </p>
