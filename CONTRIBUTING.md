@@ -6,7 +6,7 @@ Thank you for your interest in contributing to STING! 🦂
 
 1. **Fork and Clone**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/STINGBOT.git
+   git clone https://github.com/subhadeep-sec/STINGBOT.git
    cd STINGBOT
    ```
 
